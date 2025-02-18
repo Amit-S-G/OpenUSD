@@ -116,25 +116,7 @@ inline bool operator==(_ParentAnd<void> const &x, _ParentAnd<void> const &y)
 {
     return x.parent == y.parent;
 }
-inline bool operator==(_ParentAndRef<void> const &x,
-                       _ParentAndRef<void> const &y)
-{
-    return x.parent == y.parent;
-}
-inline bool operator==(_ParentAndRef<void> const &x, _ParentAnd<void> const &y)
-{
-    return x.parent == y.parent;
-}
-inline bool operator==(_ParentAnd<void> const &x, _ParentAndRef<void> const &y)
-{
-    return x.parent == y.parent;
-}
 
-inline size_t
-hash_value(const Sdf_PathNode *p)
-{
-    return TfHash()(p);
-}
 
 template <class PaT>
 inline size_t _OuterHash(PaT const &pat)
@@ -142,10 +124,7 @@ inline size_t _OuterHash(PaT const &pat)
     return TfHash::Combine(pat.parent, pat.value);
 }
 
-inline size_t _OuterHash(_ParentAnd<void> const &pat)
-{
-    return TfHash::Combine(pat.parent);
-};
+
 
 inline size_t _OuterHash(_ParentAndRef<void> const &pat)
 {

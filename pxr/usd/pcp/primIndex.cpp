@@ -920,7 +920,7 @@ struct Task {
         std::swap(lhs.vsetPath, rhs.vsetPath);
     }
 
-    // Stream insertion operator for debugging.
+/*    // Stream insertion operator for debugging.
     friend std::ostream &operator<<(std::ostream &os, Task const &task) {
         unsigned char buf[sizeof(PcpNodeRef)] = { 0 };
         memcpy(buf, &task.node, sizeof(task.node));
@@ -940,7 +940,7 @@ struct Task {
                 task.vsetPath.GetText(), task.vsetName.c_str(), task.vsetNum);
         }
         return os << ")";
-    }        
+    }       */ 
     
     Type type;
     int vsetNum; // << only for variant tasks.
